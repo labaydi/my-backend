@@ -1,6 +1,6 @@
 from flask import Flask, request
+from flask_cors import CORS  # NEU
 import os
-from flask_cors import CORS
 import shutil
 import zipfile
 import smtplib
@@ -8,11 +8,12 @@ from email.message import EmailMessage
 from dotenv import load_dotenv
 load_dotenv()
 
-# 👉 Konfiguriere deine E-Mail
 EMAIL_ADDRESS = os.environ['EMAIL_ADDRESS']
 EMAIL_PASSWORD = os.environ['EMAIL_PASSWORD']
 
 app = Flask(__name__)
+CORS(app)  # NEU
+
 UPLOAD_FOLDER = "converted"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
