@@ -1,5 +1,6 @@
 from flask import Flask, request
 import os
+from flask_cors import CORS
 import shutil
 import zipfile
 import smtplib
