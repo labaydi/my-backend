@@ -1,0 +1,5 @@
+txt
+
+flask
+gunicorn
+python-dotenv
